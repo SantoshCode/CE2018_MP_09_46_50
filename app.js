@@ -1,3 +1,14 @@
+var xDataChart1 = [0];
+var yDataChart1 = [0];
+
+var xDataChart2 = [0];
+var yDataChart2 = [0];
+
+var unsorArray = [];
+var sortedArr = [];
+
+//==================================================================================
+
 function mergeSort(unsortedArray) {
   // No need to sort the array if the array only has one element or empty
   if (unsortedArray.length <= 1) {
@@ -55,29 +66,72 @@ let selectionSort = arr => {
   return arr;
 };
 
-var xDataChart1 = [];
-var yDataChart1 = [];
+//==============================================================================================
 
-var xDataChart2 = [];
-var yDataChart2 = [];
-
-document.getElementById("btn").addEventListener("click", () => {
+document.getElementById("bestBtn").addEventListener("click", () => {
   var inputVal = document.getElementById("target").value;
   console.log(inputVal);
 
-  let unsorArray = [];
   for (let i = 0; i < inputVal; i++) {
-    unsorArray.push(Math.random());
+    unsorArray[i] = i;
   }
   document.getElementById(
     "gen"
-  ).innerText = `Generating an array of size ${inputVal} `;
+  ).innerText = `Generating sorted array of size ${inputVal} `;
+
+  document.getElementById(
+    "arr"
+  ).innerText = `Generated array is ${unsorArray} `;
+});
+
+//==============================================================================================
+
+document.getElementById("worstBtn").addEventListener("click", () => {
+  var inputVal = document.getElementById("target").value;
+  console.log(inputVal);
+
+  for (let i = 0; i < inputVal; i++) {
+    unsorArray[i] = inputVal - i;
+  }
+  document.getElementById(
+    "gen"
+  ).innerText = `Generating worst case array of size ${inputVal} `;
+
+  document.getElementById(
+    "arr"
+  ).innerText = `Generated array is ${unsorArray} `;
+});
+
+//==============================================================================================
+
+document.getElementById("randomBtn").addEventListener("click", () => {
+  var inputVal = document.getElementById("target").value;
+  console.log(inputVal);
+
+  for (let i = 0; i < inputVal; i++) {
+    unsorArray[i] = Math.random() * (100 - 10) + 10;
+  }
+  document.getElementById(
+    "gen"
+  ).innerText = `Generating random case array of size ${inputVal} `;
+
+  document.getElementById(
+    "arr"
+  ).innerText = `Generated array is ${unsorArray} `;
+});
+
+//==============================================================================================
+
+document.getElementById("btn").addEventListener("click", () => {
+  var inputVal = document.getElementById("target").value;
 
   var t1 = performance.now();
 
-  console.log(mergeSort(unsorArray));
+  sortedArr = mergeSort(unsorArray);
 
   var t2 = performance.now();
+
+  document.getElementById("sort").innerText = `Sorted array is ${sortedArr} `;
 
   xDataChart1.push(inputVal);
   yDataChart1.push(t2 - t1);
@@ -87,7 +141,14 @@ document.getElementById("btn").addEventListener("click", () => {
       x: xDataChart1,
       y: yDataChart1,
       mode: "markers+lines",
-      type: "line"
+      // type: "line",
+      type: "scatter",
+      // name: 'Spline Shape (1.3)',
+      line: {
+        shape: "spline",
+        smoothing: 1.3,
+        color: "rgb(255, 0, 0)"
+      }
     }
   ];
 
@@ -153,7 +214,6 @@ document.getElementById("btn").addEventListener("click", () => {
   Plotly.plot("chart1", data, layout);
 
   var t1chart2 = performance.now();
-
   console.log(selectionSort(unsorArray));
   var t2chart2 = performance.now();
 
@@ -165,9 +225,58 @@ document.getElementById("btn").addEventListener("click", () => {
       x: xDataChart2,
       y: yDataChart2,
       mode: "markers+lines",
-      type: "line"
+      // type: "line",
+      type: "scatter",
+      // name: 'Spline Shape (1.3)',
+      line: {
+        shape: "spline",
+        smoothing: 1.3,
+        color: "rgb(255, 0, 0)"
+      }
     }
   ];
 
   Plotly.plot("chart2", data2, layout2);
 });
+
+// const merge = (arr, left, right) => {
+//   var i;
+//   var j;
+//   for (i = 0; i < left.length; i++) {
+//     arr[i] = left[i];
+//   }
+//   for (j = 0; j < right.length; j++ , i++) {
+//     arr[i] = right[j];
+//   }
+// };
+// const seperate = (arr) => {
+//   if (arr.length <= 1)
+//     return;
+//   if (arr.length === 2) {
+//     var swap = arr[0];
+//     arr[0] = arr[1];
+//     arr[1] = swap;
+//   }
+//   var i;
+//   var j;
+//   var left = [];
+//   var right = [];
+//   for (i = 0, j = 0; i < arr.length; i = i + 2, j++) {
+//     left[j] = arr[i];
+//   }
+//   for (i = 1, j = 0; i < arr.length; i = i + 2, j++) {
+//     right[j] = arr[i];
+//   }
+//   seperate(left);
+//   seperate(right);
+//   merge(arr, left, right);
+// };
+
+// var arr1 = [0, 1, 2, 3, 4, 5, 6, 7];
+// seperate(arr1);
+// console.log("For array 1:");
+// console.log(arr1);
+// var arr2 = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+// seperate(arr2);
+// console.log("For array 2:");
+// console.log(arr2);

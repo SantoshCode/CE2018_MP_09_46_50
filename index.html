@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html charset=UTF-8" />
+    <script src="plotly-latest.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  </head>
+  <body class='p-4'>
+    <div class="navbar"><span>Real-Time Graph for Merge-sort and Selection-sort</span></div>
+    
+        <h3>Enter 'n' size of array you want to sort</h3>
+        <div class="d-flex justify-content-center" >
+          <div class=" mr-1 border p-3 rounded border-dark">
+            <input id='target' ame="length"  min="1"  type='number' placeholder="n ..."></input>
+            <button id='randomBtn' class="btn btn-primary"  >Generate random Array</button>
+            <button id='bestBtn' class="btn btn-danger"  >Generate Best Case Array</button>
+            <button id='worstBtn' class="btn btn-info"  >Generate Worst Case Array</button>
+          </div>
+
+          <div class="ml-1 border p-3 rounded border-dark">
+          <button id='btn' class="btn btn-success" >Sort It!</button>
+          </div>
+
+        </div>
+
+    <h2 id='gen'></h2>
+
+    <div class=" d-flex justify-content-center mr-5 border p-3 rounded border-dark">
+      
+      <textarea placeholder="This is an awesome comment box" rows="20" name="comment[text]"  cols="40"
+        class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list"
+        aria-haspopup="true" id='arr'></textarea>
+
+        <textarea placeholder="This is an awesome comment box" rows="20" name="comment[text]" cols="40"
+          class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list"
+          aria-haspopup="true" id='sort'></textarea>
+      
+      
+    </div>
+
+    
+
+
+
+    <div class="wrapper">
+      <div id="chart1"></div>
+      <div id="chart2"></div>
+    <script src='app.js'> </script>
+    
+    </div>
+
+
+  </body>
+</html>
+
