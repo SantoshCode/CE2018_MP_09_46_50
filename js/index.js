@@ -1,4 +1,4 @@
-const MAX_ARRAY_SIZE = Math.pow(10,3);
+const MAX_ARRAY_SIZE = Math.pow(10,4);
 const MIN_ARRAY_SIZE = Math.pow(10,0);
 const INPUT_INCREMENT = 100;
 
@@ -109,11 +109,20 @@ const selectionSortData = {
     "worse":worseSelectionSortData
 }
 
-
+//sorting completed
+console.log("Merge sort:")
 console.log(mergeSortData)
+
+console.log("Selection sort:")
 console.log(selectionSortData)
 
+//remove the loading
+const loading = document.getElementsByClassName('loading')[0]
+loading.style.display = 'none';
 
+
+
+//begin plotting
 //plotting mergesort
 const avgMerge = getXYdata(mergeSortData["avg"])
 var mergeSortAvg = {
@@ -150,15 +159,21 @@ var worseSelect = {
     name: 'Worse case'
 };
 const layout1 = {
-    title:"Merge Sort (same:avg,best & wore case)"    
+    title:"Merge Sort (same:avg,best & wore case)",
+    xaxis: {title: 'Size of the array'},
+    yaxis: {title: 'Milliseconds Took'},   
 }
 const data1 = [mergeSortAvg];
 
 const layout2 = {
-    title:"Selection Sort"    
+    title:"Selection Sort",
+    xaxis: {title: 'Size of the array'},
+    yaxis: {title: 'Milliseconds Took'},    
 }
 const data2 = [avgSelect,bestSelect,worseSelect]
 
 Plotly.newPlot('myDiv1', data1,layout1);
-Plotly.newPlot('myDiv2', data2,layout2);  
+Plotly.newPlot('myDiv2', data2,layout2);
+
+alert("To see the arrays before and after being sorted check the console :D")
 

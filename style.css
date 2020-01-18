@@ -1,5 +1,11 @@
 body {
   background: #f0f0f0;
+  text-align: center;
+}
+
+.loading{
+  text-align: center;
+  margin: 150 auto;
 }
 
 h2 {
