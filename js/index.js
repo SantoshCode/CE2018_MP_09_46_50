@@ -159,7 +159,7 @@ var worstSelect = {
     name: 'Worst case'
 };
 const layout1 = {
-    title:"Merge Sort (same:avg,best & wore case)",
+    title:"Merge Sort (same:avg,best & worst case)",
     xaxis: {title: 'Size of the array'},
     yaxis: {title: 'Milliseconds Took'},   
 }
