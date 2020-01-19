@@ -95,18 +95,18 @@ for(let i=1;i<MAX_ARRAY_SIZE;i+=INPUT_INCREMENT){
 }
 
 selectionArray.reverse()
-let worseSelectionSortData = []
+let worstSelectionSortData = []
 for(let i=1;i<MAX_ARRAY_SIZE;i+=INPUT_INCREMENT){
     //MERGE SORT
     let unsortedArray = selectionArray.slice(0,i);
     let data = sortAndGetData(unsortedArray,false)
-    worseSelectionSortData.push(data)
+    worstSelectionSortData.push(data)
 }
 
 const selectionSortData = {
     "avg":avgSelectionSortData,
     "best":bestSelectionSortData,
-    "worse":worseSelectionSortData
+    "worst":worstSelectionSortData
 }
 
 //sorting completed
@@ -129,7 +129,7 @@ var mergeSortAvg = {
     x: avgMerge.x,
     y: avgMerge.y,
     type: 'scatter',
-    name: 'Avg, Best and Worse case' 
+    name: 'Avg, Best and Worst case' 
 };
 
 
@@ -151,12 +151,12 @@ var bestSelect = {
     
 };
 
-const worseSelectData = getXYdata(selectionSortData["worse"])
-var worseSelect = {
-    x: worseSelectData.x,
-    y: worseSelectData.y,
+const worstSelectData = getXYdata(selectionSortData["worst"])
+var worstSelect = {
+    x: worstSelectData.x,
+    y: worstSelectData.y,
     type: 'scatter',
-    name: 'Worse case'
+    name: 'Worst case'
 };
 const layout1 = {
     title:"Merge Sort (same:avg,best & wore case)",
@@ -170,7 +170,7 @@ const layout2 = {
     xaxis: {title: 'Size of the array'},
     yaxis: {title: 'Milliseconds Took'},    
 }
-const data2 = [avgSelect,bestSelect,worseSelect]
+const data2 = [avgSelect,bestSelect,worstSelect]
 
 Plotly.newPlot('myDiv1', data1,layout1);
 Plotly.newPlot('myDiv2', data2,layout2);
