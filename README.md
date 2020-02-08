@@ -1,7 +1,7 @@
 # Merg-selection-timer
 
   <h4>This was a mini project for COMP202 course at Kathmandu University</h4>
-  <p>This project is the implementation of selection sort and merge sort algorithm. The implemented algorithm is used to sort the array of different sizes (1 to 10000) and time required to solve is recorded. After sorting the same array using selection and merge sort  their corresponding time we plot the time required vs array size in the graph to analize the algorithms. Moreover, we have noted these values for the averagecase, bestcase and worstcase of the algorithms.</p>
+  <p>This project is the implementation of selection sort and merge sort algorithm. The implemented algorithm is used to sort the array of different sizes (1 to 10000) and time required to solve is recorded. After sorting the same array using selection and merge sort  their corresponding time we plot the time required vs array size in the graph to analize the algorithms. Following is the analysis of the obtained results.</p>
 
 ![ScreenShot](https://github.com/SantoshCode/Merg-selection-timer/blob/master/Screenshot%20from%202020-01-19%2001-56-52.png)
 
