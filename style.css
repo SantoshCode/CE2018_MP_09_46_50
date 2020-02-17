@@ -1,5 +1,10 @@
 body {
   background: #f0f0f0;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 h2 {
@@ -37,4 +42,10 @@ textarea:focus {
 .space{
   padding-left: 20%;
   padding-right: 20%;
+}
+
+.btn1 {
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 300px;
 }

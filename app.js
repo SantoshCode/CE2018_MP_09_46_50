@@ -68,39 +68,39 @@ let selectionSort = arr => {
 
 //==============================================================================================
 
-document.getElementById("bestBtn").addEventListener("click", () => {
-  var inputVal = document.getElementById("target").value;
-  console.log(inputVal);
+// document.getElementById("bestBtn").addEventListener("click", () => {
+//   var inputVal = document.getElementById("target").value;
+//   console.log(inputVal);
 
-  for (let i = 0; i < inputVal; i++) {
-    unsorArray[i] = i;
-  }
-  document.getElementById(
-    "gen"
-  ).innerText = `Generating sorted array of size ${inputVal} `;
+//   for (let i = 0; i < inputVal; i++) {
+//     unsorArray[i] = i;
+//   }
+//   document.getElementById(
+//     "gen"
+//   ).innerText = `Generating sorted array of size ${inputVal} `;
 
-  document.getElementById(
-    "arr"
-  ).innerText = `Generated array is ${unsorArray} `;
-});
+//   document.getElementById(
+//     "arr"
+//   ).innerText = `Generated array is ${unsorArray} `;
+// });
 
 //==============================================================================================
 
-document.getElementById("worstBtn").addEventListener("click", () => {
-  var inputVal = document.getElementById("target").value;
-  console.log(inputVal);
+// document.getElementById("worstBtn").addEventListener("click", () => {
+//   var inputVal = document.getElementById("target").value;
+//   console.log(inputVal);
 
-  for (let i = 0; i < inputVal; i++) {
-    unsorArray[i] = inputVal - i;
-  }
-  document.getElementById(
-    "gen"
-  ).innerText = `Generating worst case array of size ${inputVal} `;
+//   for (let i = 0; i < inputVal; i++) {
+//     unsorArray[i] = inputVal - i;
+//   }
+//   document.getElementById(
+//     "gen"
+//   ).innerText = `Generating worst case array of size ${inputVal} `;
 
-  document.getElementById(
-    "arr"
-  ).innerText = `Generated array is ${unsorArray} `;
-});
+//   document.getElementById(
+//     "arr"
+//   ).innerText = `Generated array is ${unsorArray} `;
+// });
 
 //==============================================================================================
 
@@ -109,7 +109,7 @@ document.getElementById("randomBtn").addEventListener("click", () => {
   console.log(inputVal);
 
   for (let i = 0; i < inputVal; i++) {
-    unsorArray[i] = Math.random() * (100 - 10) + 10;
+    unsorArray[i] = (Math.random() * (100 - 10) + 10).toFixed(2);
   }
   document.getElementById(
     "gen"
