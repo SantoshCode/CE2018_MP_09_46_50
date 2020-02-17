@@ -112,6 +112,7 @@ document.getElementById("randomBtn").addEventListener("click", () => {
   for (let i = 0; i < inputVal; i++) {
     unsorArray[i] = (Math.random() * (100 - 10) + 10).toFixed(2);
   }
+  unsortArray = Array.apply(null, {length:inputVal}).map(()=>(Math.random() * (100 - 10) + 10).toFixed(2))
   document.getElementById(
     "gen"
   ).innerText = `Generating random case array of size ${inputVal} `;
